@@ -77,7 +77,7 @@ const int N = 2e5+7;
 
 void solve()
 {
-	cout<<"ASDFJKL:";
+	
 } 
 
 
