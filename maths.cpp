@@ -53,7 +53,7 @@ void bigfactorial(int number)
 	}
 	for(int i=n-1;i>=0;i--)
 		cout<<V[i];
-	cout<<ln;
+	cout<<ln<<"endl"<<" "<<"big factor";
 	
 }
 
