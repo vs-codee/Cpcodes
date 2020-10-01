@@ -74,6 +74,13 @@ void online()
 /* CODE STARTS HERE */
 
 const int N = 2e5+7;
+void printres()
+{	string t;
+	read(t);
+	d=stod(t);
+	cout<<"result"<<endl;
+}
+
 
 void solve()
 {
