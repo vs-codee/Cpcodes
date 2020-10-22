@@ -11,6 +11,8 @@
 #define sc second
 #define pb emplace_back
 #define vint vector<int>
+#define pi pair<int,int>
+#define vii vector<pair<int,int>> 
 using namespace std;
 
 void online()
@@ -27,31 +29,31 @@ void online()
 const int N = 1e5;
 
 vector< pair< int ,int > > Graph[N];
-int parent[N];
+int Parent[N];
 
-int find(int n)
+int Find(int n)
 {
 	if(parent[n]==n)
 	return n;
-	return parent[n]=find(parent[n]);
+	return parent[n]=Find(parent[n]);
 }
 void Union(int a,int b)
 {
-	int x=find(a);
-	int y=find(b);
+	int x=Find(a);
+	int y=Find(b);
 	if(x!=y)
 	{
 		parent[y]=x;	
 	}
 }
 
-struct graph
+struct Graph
 {
 	int a,b,w;
 };
 
 
-bool cmp(const graph& A, const graph& B)
+bool cmp(const Graph& A, const Graph& B)
 {
 	return A.w<B.w;
 }
@@ -59,7 +61,7 @@ void solve()
 {
 	int node,edg;
 	cin>>node>>edg;
-	graph V[edg];
+	Graph V[edg];
 	iota(parent,parent+node+1,0);
 	for(int i=0;i<edg;i++)
 	{
@@ -71,7 +73,7 @@ void solve()
 	// 	cout<<i.a<<" " << i.b<<" " << i.w<<ln;
 	for(auto i:V)
 	{
-		if(find(i.a)!=find(i.b))
+		if(Find(i.a)!=Find(i.b))
 		{	
 			cout<<i.w<<" "<<i.a<<" "<<i.b<<ln;		
 			Union(i.a,i.b);		
